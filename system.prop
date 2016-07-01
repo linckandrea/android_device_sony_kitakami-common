@@ -57,6 +57,7 @@ dalvik.vm.image-dex2oat-threads=4
 
 # Media
 ro.config.media_vol_steps=25
+ro.config.vc_call_vol_steps=7
 media.stagefright.enable-player=true
 media.stagefright.enable-http=true
 media.stagefright.enable-aac=true
