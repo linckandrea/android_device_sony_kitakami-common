@@ -54,6 +54,7 @@ BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += boot_cpus=0-5
+BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += dwc3_msm.hvdcp_max_current=1500
 BOARD_KERNEL_CMDLINE += dwc3_msm.prop_chg_detect=Y
 BOARD_KERNEL_CMDLINE += coherent_pool=2M
