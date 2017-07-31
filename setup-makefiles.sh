@@ -39,7 +39,6 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 # Copyright headers and guards
 write_headers "ivy karin karin_windy satsuki sumire suzuran"
 
-# The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
 
 printf '\n' >> "$PRODUCTMK"
@@ -53,7 +52,7 @@ echo "endif" >> "$ANDROIDMK"
 
 printf 'endif\n' >> "$PRODUCTMK"
 
-# We are done!
+# Finish
 write_footers
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
