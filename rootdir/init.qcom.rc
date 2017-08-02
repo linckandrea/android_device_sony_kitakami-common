@@ -575,6 +575,7 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
     group system wakelock drmrpc
+    shutdown critical
     writepid /dev/cpuset/system-background/tasks
 
 # DSDS second ril
