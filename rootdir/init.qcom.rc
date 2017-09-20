@@ -439,7 +439,7 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
     rm /data/system/perfd/default_values
-    start perfd
+    start vendor.perfd
 
     # SONY: Camera
     mkdir /data/camera 0770 media camera
@@ -521,7 +521,7 @@ service qseecomd /system/bin/qseecomd
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service perfd /system/vendor/bin/perfd
+service vendor.perfd /system/vendor/bin/perfd
     class main
     user root
     group system
@@ -529,7 +529,7 @@ service perfd /system/vendor/bin/perfd
     socket perfd seqpacket 0666 root system
     writepid /dev/cpuset/system-background/tasks
 
-service thermal-engine /system/vendor/bin/thermal-engine
+service vendor.thermal-engine /system/vendor/bin/thermal-engine
    class main
    user root
    group root
