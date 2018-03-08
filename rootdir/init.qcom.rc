@@ -477,7 +477,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
 
 service sensors /system/bin/sensors.qcom
     class main
-    user root
+    user root system
     group radio system
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
