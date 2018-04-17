@@ -47,7 +47,5 @@ static inline const char* getBTDefaultName()
 
 #define BTM_DEF_LOCAL_NAME getBTDefaultName()
 
-#define BTM_WBS_INCLUDED     TRUE
-
 #pragma pop_macro("PROPERTY_VALUE_MAX")
 #endif
