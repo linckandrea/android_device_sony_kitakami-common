@@ -215,10 +215,6 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
     power.msm8994
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_kitakami
-
 # Renderscript
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
