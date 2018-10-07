@@ -24,3 +24,15 @@ value: 2997
 
 [AID_VENDOR_AID_TA_QMI]
 value: 2998
+
+[firmware/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[persist/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
