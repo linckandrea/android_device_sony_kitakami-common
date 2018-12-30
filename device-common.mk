@@ -23,7 +23,9 @@ PRODUCT_SOONG_NAMESPACES += \
     device/sony/kitakami-common
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # Radio config
 ifneq ($(BOARD_HAVE_RADIO),false)
