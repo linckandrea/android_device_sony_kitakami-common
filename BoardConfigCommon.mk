@@ -100,6 +100,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 PRODUCT_PLATFORM_SOD := true
 
 # Camera
+BOARD_QTI_CAMERA_32BIT_ONLY := true
+TARGET_USES_MEDIA_EXTENSIONS := true
+USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=25 \
     /system/bin/mediaserver=25 \
