@@ -626,7 +626,7 @@ service charger /system/bin/charger
     user system
     group system graphics input
     capabilities SYS_BOOT
-    seclabel u:r:healthd:s0
+    seclabel u:r:charger:s0
 
 service per_mgr /system/bin/pm-service
     class core
