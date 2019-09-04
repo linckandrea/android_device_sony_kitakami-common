@@ -18,6 +18,10 @@
 # Get non-open-source common files
 $(call inherit-product, vendor/sony/kitakami-common/kitakami-common-vendor.mk)
 
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    device/sony/kitakami-common
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
