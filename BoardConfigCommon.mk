@@ -80,7 +80,9 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/bin/mm-qcamera-daemon=25
+    /system/bin/iddd=25 \
+    /system/bin/mm-qcamera-daemon=25 \
+    /system/bin/sensors.qcom=25
 
 >>>>>>> abfa6cd6... kitakami-common: Mark camera-related processes as API level 25.
 # Charger
