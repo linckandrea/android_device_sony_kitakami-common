@@ -241,6 +241,7 @@ PRODUCT_PACKAGES += \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
+    libOmxG711Enc \
     libOmxQcelp13Enc \
     libOmxSwVencMpeg4 \
     libOmxSwVencHevc \
