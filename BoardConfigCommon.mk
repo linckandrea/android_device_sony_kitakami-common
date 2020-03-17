@@ -127,6 +127,9 @@ TARGET_POWERHAL_VARIANT := qcom
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+
 # RPC
 TARGET_NO_RPC := true
 
