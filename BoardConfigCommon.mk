@@ -139,6 +139,9 @@ TARGET_USES_NO_MTU_IPACM := true
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
+# RIL
+BOARD_PROVIDES_LIBRIL := true
+
 # RPC
 TARGET_NO_RPC := true
 
