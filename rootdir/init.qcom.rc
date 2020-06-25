@@ -624,6 +624,7 @@ service updatemiscta /system/bin/updatemiscta
 service charger /system/bin/charger
     class charger
     group log
+    capabilities SYS_BOOT
     seclabel u:r:healthd:s0
 
 service per_mgr /system/bin/pm-service
