@@ -258,7 +258,7 @@ on boot
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all ./vendor/etc/fstab.qcom
+    mount_all ./vendor/etc/fstab.qcom --early
     # Threshold for cma page reclaim
     write /proc/sys/vm/swap_thresh_cma_free_pages 7680
 
@@ -270,6 +270,14 @@ on fs
     chmod 0750 /rca
     exec /system/bin/rm -r /rca/lost+found
     symlink /rca /mnt/rca
+
+on late-fs
+    # Start services for Boot Animation
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    # Mount RW partitions which need run fsck
+    mount_all ./vendor/etc/fstab.qcom --late
 
 on post-fs
     # Setup zram options
