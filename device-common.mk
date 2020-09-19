@@ -258,6 +258,7 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    libaudioclient_shim \
     libxml2
 
 # RIL Wrapper
