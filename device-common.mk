@@ -151,6 +151,8 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
