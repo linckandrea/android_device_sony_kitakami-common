@@ -325,4 +325,7 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
+
+    <!-- The amount to scale fullscreen snapshots for Overview and snapshot starting windows. -->
+        <item name="config_highResTaskSnapshotScale" format="float" type="dimen">0.8</item>
 </resources>
