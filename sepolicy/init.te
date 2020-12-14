@@ -19,3 +19,5 @@ allow init trim_area_partition_device:blk_file { write setattr };
 
 #TAD
 allow init tad_socket:sock_file create;
+
+allow init proc_last_kmsg:file { r_file_perms setattr };
