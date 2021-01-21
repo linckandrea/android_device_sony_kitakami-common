@@ -88,9 +88,6 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libmm-disp-apis.so
 vendor/lib64/libOpenCL.so
-vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/librs_adreno.so
-vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libscale.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
@@ -110,9 +107,6 @@ vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libmm-disp-apis.so
 vendor/lib/libOpenCL.so
-vendor/lib/librs_adreno_sha1.so
-vendor/lib/librs_adreno.so
-vendor/lib/libRSDriver_adreno.so
 vendor/lib/libscale.so
 
 # Graphics firmware
