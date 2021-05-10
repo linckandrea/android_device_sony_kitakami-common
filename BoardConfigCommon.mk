@@ -173,4 +173,4 @@ WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin"
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 
 # Inherit common blobs
--include vendor/sony/kitakami-common/BoardConfigVendor.mk
+include vendor/sony/kitakami-common/BoardConfigVendor.mk
