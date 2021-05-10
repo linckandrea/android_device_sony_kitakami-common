@@ -74,19 +74,17 @@ BOARD_CUSTOM_BT_CONFIG := $(COMMON_PATH)/bluetooth/vnd_generic.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
-<<<<<<< HEAD
-=======
 # Camera
-TARGET_USES_MEDIA_EXTENSIONS := true
-
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=25 \
     /system/bin/mediaserver=25 \
     /system/bin/iddd=25 \
+    /system/bin/secd=25 \
+    /system/bin/tad_static=25 \
+    /system/bin/loc_launcher=25 \
     /system/bin/mm-qcamera-daemon=25 \
     /system/bin/sensors.qcom=25
 
->>>>>>> abfa6cd6... kitakami-common: Mark camera-related processes as API level 25.
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -170,7 +168,8 @@ TARGET_LD_SHIM_LIBS := \
      /system/lib64/libsys-utils.so|libsensor.so \
      /system/lib/libcammw.so|libsensor.so \
      /system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so \
-     /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so
+     /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so \
+     /system/bin/secd|/system/lib64/lib-preload64.so
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
