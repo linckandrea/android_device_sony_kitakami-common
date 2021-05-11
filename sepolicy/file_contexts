@@ -60,6 +60,9 @@
 /idd                                     u:object_r:diag_data_file:s0
 /idd(/.*)?                               u:object_r:diag_data_file:s0
 
+# Power
+/(vendor|system/vendor)/bin/init.qcom.power.sh                                   u:object_r:init-power-sh:s0
+
 # TimeKeep
 /sys/devices/soc\.0/qpnp-rtc-8/rtc/rtc0(/.*)?                           u:object_r:sysfs_rtc:s0
 /(system/vendor|vendor)/bin/timekeep                                    u:object_r:timekeep_exec:s0
