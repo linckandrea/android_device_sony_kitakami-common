@@ -663,7 +663,6 @@ on property:init.svc.fuse_sdcard1=running
     write /sys/class/block/mmcblk1/bdi/max_ratio 1
 
 service secd /system/bin/secd
-    setenv LD_PRELOAD /system/lib64/lib-preload64.so
     class main
     user system
     group system
