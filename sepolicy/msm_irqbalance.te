@@ -1,0 +1,5 @@
+type msm_irqbalance, domain;
+type msm_irqbalance_exec, exec_type, file_type;
+
+# Started by init
+init_daemon_domain(msm_irqbalance)
