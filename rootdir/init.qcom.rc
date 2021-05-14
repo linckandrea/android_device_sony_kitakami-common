@@ -72,22 +72,6 @@ on early-boot
     setrlimit 8 67108864 67108864
     write /sys/kernel/boot_adsp/boot 1
 
-on fs
-    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
-    # Threshold for cma page reclaim
-    write /proc/sys/vm/swap_thresh_cma_free_pages 7680
-
-    chown oem_2987 oem_2987 /idd
-    chmod 0751 /iddA
-    exec /system/bin/rm -r /idd/lost+found
-    symlink /idd /mnt/idd
-    chown oem_2987 oem_2987 /rca
-    chmod 0750 /rca
-    exec /system/bin/rm -r /rca/lost+found
-    symlink /rca /mnt/rca
-
 on boot
 
     # execute script to set initial CPU settings
@@ -240,6 +224,22 @@ on boot
 
     # Disable audio jack impedance detection
     write /sys/module/snd_soc_wcd9xxx/parameters/impedance_detect_en 0
+
+on fs
+    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
+    mount_all fstab.qcom
+    # Threshold for cma page reclaim
+    write /proc/sys/vm/swap_thresh_cma_free_pages 7680
+
+    chown oem_2987 oem_2987 /idd
+    chmod 0751 /iddA
+    exec /system/bin/rm -r /idd/lost+found
+    symlink /idd /mnt/idd
+    chown oem_2987 oem_2987 /rca
+    chmod 0750 /rca
+    exec /system/bin/rm -r /rca/lost+found
+    symlink /rca /mnt/rca
 
 on post-fs
     # Setup zram options
