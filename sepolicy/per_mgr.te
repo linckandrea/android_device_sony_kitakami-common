@@ -1,0 +1,4 @@
+allow per_mgr init:binder call;
+allow per_mgr per_proxy:binder call;
+allow per_mgr self:capability net_raw;
+allow per_mgr subsys_modem_device:chr_file rw_file_perms;
