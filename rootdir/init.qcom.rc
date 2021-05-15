@@ -477,7 +477,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
 
 service sensors /system/bin/sensors.qcom
     class main
-    user root system
+    user root
     group radio system
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
@@ -568,7 +568,7 @@ service ta_qmi_service /system/bin/ta_qmi_service
 # SONY prop
 service sct_service /system/bin/sct_service
     class main
-    user root drmrpc
+    user root
     writepid /dev/cpuset/system-background/tasks
 
 # SONY prop
