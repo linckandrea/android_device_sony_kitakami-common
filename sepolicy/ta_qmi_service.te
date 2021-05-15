@@ -3,3 +3,10 @@ type ta_qmi_service_exec, exec_type, file_type;
 
 # Started by init
 init_daemon_domain(ta_qmi_service)
+
+allow ta_qmi_service secd_exec:file { getattr read };
+allow ta_qmi_service self:capability { net_raw setgid setuid };
+allow ta_qmi_service self:capability2 block_suspend;
+allow ta_qmi_service self:socket { bind create ioctl read };
+allow ta_qmi_service sysfs_wake_lock:file { append open };
+

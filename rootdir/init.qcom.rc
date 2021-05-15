@@ -42,8 +42,6 @@ on early-init
 
 on init
     mkdir /persist/data 0700 system system
-    mkdir /idd 0751 oem_2987 oem_2987
-    mkdir /rca 0750 oem_2987 oem_2987
 
     wait /dev/block/mmcblk0p1
     chown oem_2997 oem_2997 /dev/block/mmcblk0p1
@@ -425,9 +423,6 @@ on post-fs-data
     #Create directory for FOTA
     mkdir /data/fota 0771
     chown system system /data/fota
-
-    #Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
 
     mkdir /data/audio/ 0770 media audio
 
