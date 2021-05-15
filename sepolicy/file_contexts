@@ -51,6 +51,10 @@ system/bin/init\.qcom\.power\.sh                   u:object_r:init-power-sh_exec
 /data/fpc(/.*)?                                            u:object_r:fpc_data_file:s0
 /data/fpcd(/.*)?                                           u:object_r:fpc_data_file:s0
 
+# Taimport
+/data/etc                                                  u:object_r:ta_data_file:s0
+/data/etc(/.*)                                             u:object_r:ta_data_file:s0
+
 # TimeKeep
 /sys/devices/soc\.0/qpnp-rtc-8/rtc/rtc0(/.*)?                           u:object_r:sysfs_rtc:s0
 /(system/vendor|vendor)/bin/timekeep                                    u:object_r:timekeep_exec:s0
@@ -77,3 +81,5 @@ system/bin/init\.qcom\.power\.sh                   u:object_r:init-power-sh_exec
 /system/bin/ta_qmi_service                                 u:object_r:ta_qmi_service_exec:s0
 /system/bin/updatemiscta                                   u:object_r:updatemiscta_exec:s0
 /system/vendor/bin/perfd                                   u:object_r:perfd_exec:s0
+
+/system/vendor/(lib|lib64)/libril-wrapper\.so              u:object_r:hal_ril_wrapper_exec:s0

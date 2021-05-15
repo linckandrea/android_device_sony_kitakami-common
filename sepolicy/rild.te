@@ -1,0 +1,5 @@
+# Allow rild to access tad
+unix_socket_connect(rild, tad, tad)
+
+allow rild firmware_file:dir search;
+allow rild firmware_file:file r_file_perms;
