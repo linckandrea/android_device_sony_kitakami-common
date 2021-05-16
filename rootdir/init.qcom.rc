@@ -35,11 +35,6 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
     symlink /dev/pn54x /dev/pn547
 
-    # Disable big cluster
-    write /sys/module/msm_performance/parameters/num_clusters 2
-    write /sys/module/msm_performance/parameters/managed_cpus 0-3
-    write /sys/module/msm_performance/parameters/managed_cpus 4-7
-
 on init
     mkdir /persist/data 0700 system system
 
@@ -681,6 +676,10 @@ service iddd /system/bin/iddd
     user oem_2987
     group oem_2987 log inet oem_2993
     disabled
+
+on property:sys.boot_completed=1
+    restart cameraserver
+    write /dev/kmsg "Boot completed "
 
 on property:service.usb.otg.switch=check
     write /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling 1

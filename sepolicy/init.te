@@ -12,4 +12,8 @@ allow init sysfs_memory:file { open write };
 allow init sysfs_msm_perf:file { open write };
 allow init sysfs_thermal:file write;
 allow init system_file:file execute_no_trans;
-allow init trim_area_partition_device:blk_file setattr;
+
+allow init trim_area_partition_device:blk_file { write setattr };
+
+#TAD
+allow init tad_socket:sock_file create;

@@ -1,5 +1,6 @@
 # NFC
 /dev/pn54x                                                 u:object_r:nfc_device:s0
+/data/nfc/nfaStorage.bin1                                            u:object_r:nfc_data_file:s0
 
 # Blocks
 /dev/block/mmcblk0p1                                       u:object_r:trim_area_partition_device:s0
@@ -61,18 +62,18 @@ system/bin/init.qcom.power.sh                 u:object_r:init-power-sh_exec:s0
 /(system/vendor|vendor)/bin/timekeep                                    u:object_r:timekeep_exec:s0
 
 # Misc
-/system/bin/adsprpcd                                       u:object_r:adsprpcd_exec:s0
+/system/vendor/bin/adsprpcd                                       u:object_r:adsprpcd_exec:s0
 /system/bin/clean_scratch_files                            u:object_r:clean_scratch_files_exec:s0
 /system/bin/iddd                                           u:object_r:iddd_exec:s0
 /system/bin/irsc_util                                      u:object_r:irsc_util_exec:s0
 /system/bin/mlog_qmi_service                               u:object_r:mlog_qmi_service_exec:s0
-/system/bin/mm-qcamera-daemon                              u:object_r:qcamerasvr_exec:s0
+/system/vendor/bin/mm-qcamera-daemon                              u:object_r:qcamerasvr_exec:s0
 /system/bin/msm_irqbalance                                 u:object_r:msm_irqbalance_exec:s0
 /system/bin/netmgrd                                        u:object_r:netmgrd_exec:s0
-/system/bin/pm-proxy                                       u:object_r:per_proxy_exec:s0
-/system/bin/pm-service                                     u:object_r:per_mgr_exec:s0
+/system/vendor/bin/pm-proxy                                       u:object_r:per_proxy_exec:s0
+/system/vendor/bin/pm-service                                     u:object_r:per_mgr_exec:s0
 /system/bin/qmuxd                                          u:object_r:qmuxd_exec:s0
-/system/bin/qseecomd                                       u:object_r:tee_exec:s0
+/system/vendor/bin/qseecomd                                       u:object_r:tee_exec:s0
 /system/bin/rmt_storage                                    u:object_r:rmt_storage_exec:s0
 /system/bin/sct_service                                    u:object_r:sct_service_exec:s0
 /system/bin/secd                                           u:object_r:secd_exec:s0
