@@ -31,6 +31,7 @@
 
 # Camera
 /sys/devices(/soc\.0)?/pmi8994-flash-27(/.*)?              u:object_r:sysfs_camera_torch:s0
+/data/vendor/qcam(/.*)?				         u:object_r:vendor_camera_data_file:s0
 
 # Core_ctl
 system/bin/init.qcom.power.sh                 u:object_r:init-power-sh_exec:s0
