@@ -81,13 +81,7 @@ static int camera_device_open(const hw_module_t* module, const char* name,
         if (check_vendor_module())
             return -EINVAL;
 
-        if (isHAL3Enabled) {
-            ALOGV("%s: using HAL3", __FUNCTION__);
-            rv = camera3_device_open(module, name, device);
-        } else {
-            ALOGV("%s: using HAL2", __FUNCTION__);
-            rv = camera2_device_open(module, name, device);
-        }
+	rv = camera3_device_open(module, name, device);
     }
 
     ALOGV("%s: rv = %d", __FUNCTION__, rv);
