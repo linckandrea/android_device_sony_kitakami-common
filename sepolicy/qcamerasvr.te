@@ -4,3 +4,9 @@ type qcamerasvr_exec, exec_type, file_type;
 
 # Started by init
 init_daemon_domain(qcamerasvr)
+
+allow qcamerasvr camera_prop:file { getattr open read };
+allow qcamerasvr ion_device:chr_file { open read };
+allow qcamerasvr sysfs:file r_file_perms;
+allow qcamerasvr sysfs_graphics:file r_file_perms;
+allow qcamerasvr video_device:chr_file { ioctl open read write };

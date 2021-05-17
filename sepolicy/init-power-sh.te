@@ -1,5 +1,5 @@
 type init-power-sh, domain;
-type init-power-sh_exec, exec_type, vendor_file_type, file_type;
+type init-power-sh_exec, exec_type, file_type;
 
 init_daemon_domain(init-power-sh)
 
@@ -31,4 +31,4 @@ allow init-power-sh file_contexts_file:file r_file_perms;
 allow init-power-sh rootfs:file r_file_perms;
 
 # execute toybox/toolbox
-allow init-power-sh vendor_toolbox_exec:file rx_file_perms;
+allow init-power-sh vendor_toolbox_exec:file execute_no_trans;

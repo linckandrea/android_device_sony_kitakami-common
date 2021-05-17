@@ -1,0 +1,5 @@
+allow cameraserver hal_configstore_default:binder call;
+allow cameraserver hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
+allow cameraserver qcamerasvr:unix_dgram_socket sendto;
+allow cameraserver qcamerasvr:unix_stream_socket connectto;
+allow cameraserver ta_data_file:dir search;

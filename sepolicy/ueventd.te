@@ -1,0 +1,2 @@
+allow ueventd diag_partition_device:blk_file create_file_perms;
+allow ueventd proc:file r_file_perms;
