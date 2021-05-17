@@ -37,8 +37,6 @@ on early-init
 
 on init
     mkdir /persist/data 0700 system system
-    mkdir /idd 0751 oem_2987 oem_2987
-    mkdir /rca 0750 oem_2987 oem_2987
 
     wait /dev/block/mmcblk0p1
     chown oem_2997 oem_2997 /dev/block/mmcblk0p1
