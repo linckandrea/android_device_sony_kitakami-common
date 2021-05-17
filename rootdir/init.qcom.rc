@@ -457,6 +457,8 @@ on post-fs-data
     # Wifi firmware reload path
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
 
+    setprop persist.camera.HAL3.enabled 1
+
     setprop vold.post_fs_data_done 1
 
 on property:init.svc.wpa_supplicant=stopped
