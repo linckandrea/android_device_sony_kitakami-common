@@ -146,6 +146,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_ROOT_EXTRA_FOLDERS := firmware persist idd rca
 
+# Power
+TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
