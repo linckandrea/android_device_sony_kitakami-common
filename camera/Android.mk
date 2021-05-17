@@ -17,6 +17,7 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 
+LOCAL_STATIC_LIBRARIES := libbase libarect
 LOCAL_SRC_FILES := \
     CameraWrapper.cpp \
     Camera2Wrapper.cpp \
@@ -27,11 +28,11 @@ LOCAL_SHARED_LIBRARIES := \
     liblog \
     libcamera_client \
     libgui \
-    libhidltransport \
     libsensor \
     libutils \
     libcutils \
-    android.hidl.token@1.0-utils
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0
 
 LOCAL_C_INCLUDES := \
     framework/native/include \

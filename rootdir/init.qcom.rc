@@ -457,8 +457,6 @@ on post-fs-data
     # Wifi firmware reload path
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
 
-    setprop persist.camera.HAL3.enabled 1
-
     setprop vold.post_fs_data_done 1
 
 on property:init.svc.wpa_supplicant=stopped
@@ -511,11 +509,17 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
-    class late_start
+service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+    class main
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
+
+on property:init.svc.media=restarting
+    restart vendor.qcamerasvr
+
+on property:init.svc.servicemanager=restarting
+    restart vendor.qcamerasvr
 
 service vendor.qseecomd /system/vendor/bin/qseecomd
     class core
