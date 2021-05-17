@@ -8,6 +8,7 @@ type sysfs_addrsetup, fs_type, sysfs_type;
 type sysfs_camera_torch, sysfs_type, file_type;
 type sysfs_performance, sysfs_type, file_type;
 type sysfs_timekeep, fs_type, sysfs_type;
+type sysfs_touch, sysfs_type, file_type;
 type tad_socket, file_type;
 type ta_data_file, file_type;
 type timekeep_data_file, file_type, data_file_type;

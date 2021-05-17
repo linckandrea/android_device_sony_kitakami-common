@@ -1,2 +1,6 @@
 allow hal_power_default perfd:process signull;
 allow hal_power_default sysfs:file rw_file_perms;
+
+# Touch
+allow hal_power_default sysfs_touch:dir search;
+allow hal_power_default sysfs_touch:file w_file_perms;
