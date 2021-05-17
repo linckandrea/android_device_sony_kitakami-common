@@ -222,8 +222,8 @@ BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_AVOID_IFACE_RESET_MAC_CHANGE := true
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_AP      := "/system/etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_STA     := "/system/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_AP      := "/system/vendor/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_STA     := "/system/vendor/firmware/wlan/bcmdhd/fw_bcmdhd.bin"
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 
 # Inherit common blobs
