@@ -108,7 +108,7 @@ BOARD_HAVE_BLUETOOTH_BCM := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /system/bin/cameraserver=25 \
     /system/bin/mediaserver=25 \
-    /system/bin/mm-qcamera-daemon=25 \
+    /system/vendor/bin/mm-qcamera-daemon=25 \
     /system/bin/sensors.qcom=25
 
 # Charger
