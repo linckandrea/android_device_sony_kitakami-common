@@ -25,6 +25,18 @@ value: 2997
 [AID_VENDOR_AID_TA_QMI]
 value: 2998
 
+[system/bin/qmuxd]
+mode: 0700
+user: AID_RADIO
+group: AID_SHELL
+caps: BLOCK_SUSPEND
+
+[system/vendor/bin/mm-qcamera-daemon]
+mode: 0700
+user: AID_CAMERA
+group: AID_SHELL
+caps: SYS_NICE
+
 [firmware/]
 mode: 0771
 user: AID_SYSTEM
