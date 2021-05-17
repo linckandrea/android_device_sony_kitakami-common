@@ -35,11 +35,6 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
     symlink /dev/pn54x /dev/pn547
 
-    # Disable big cluster
-    write /sys/module/msm_performance/parameters/num_clusters 2
-    write /sys/module/msm_performance/parameters/managed_cpus 0-3
-    write /sys/module/msm_performance/parameters/managed_cpus 4-7
-
 on init
     mkdir /persist/data 0700 system system
     mkdir /idd 0751 oem_2987 oem_2987
@@ -111,7 +106,7 @@ on boot
 
     # execute script to set initial CPU settings
     # don't run as a service to avoid race conditions
-    exec - root system -- /system/bin/init.qcom.power.sh
+    exec - root root system -- /system/bin/init.qcom.power.sh
 
     # Bluetooth
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
@@ -555,6 +550,7 @@ service tad_static /system/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
     user oem_2997
     group oem_2997 root
     socket tad stream 0660 system oem_2993
+    seclabel u:r:tad:s0
     writepid /dev/cpuset/system-background/tasks
 
 # SONY misc
@@ -562,12 +558,14 @@ service ta_qmi_service /system/bin/ta_qmi_service
     class main
     user root
     group wakelock
+    seclabel u:r:ta_qmi_service:s0
     writepid /dev/cpuset/system-background/tasks
 
 # SONY prop
 service sct_service /system/bin/sct_service
     class main
     user root
+    seclabel u:r:sct_service:s0
     writepid /dev/cpuset/system-background/tasks
 
 # SONY prop
@@ -627,6 +625,7 @@ service updatemiscta /system/bin/updatemiscta
     user oem_2991
     group oem_2993
     oneshot
+    seclabel u:r:updatemiscta:s0
 
 service charger /system/bin/charger
     class charger
@@ -635,22 +634,22 @@ service charger /system/bin/charger
     capabilities SYS_BOOT
     seclabel u:r:charger:s0
 
-service per_mgr /system/bin/pm-service
+service vendor.per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system net_raw
 
-service per_proxy /system/bin/pm-proxy
+service vendor.per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system net_raw
     disabled
 
 on property:init.svc.per_mgr=running
-    start per_proxy
+    start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
-    stop per_proxy
+    stop vendor.per_proxy
 
 # brcm-uim-sysfs (BT/FM/ANT+)
 service uim /system/bin/brcm-uim-sysfs
