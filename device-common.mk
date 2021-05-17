@@ -113,6 +113,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
+    camera.device@1.0-impl \
     Snap
 
 # Charger
@@ -134,8 +135,11 @@ PRODUCT_PACKAGES += \
     copybit.msm8994 \
     gralloc.msm8994 \
     hwcomposer.msm8994 \
-    libtinyxml \
-    memtrack.msm8994
+    liboverlay \
+    libqdutils \
+    libqdMetaData \
+    memtrack.msm8994 \
+    libtinyxml
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
