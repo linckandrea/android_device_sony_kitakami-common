@@ -158,6 +158,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flashled_calc_parameters.cfg:system/etc/flashled_calc_parameters.cfg
 
+# FM
+PRODUCT_PACKAGES += \
+    FMRadio \
+    brcm-uim-sysfs \
+    libfmjni
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
