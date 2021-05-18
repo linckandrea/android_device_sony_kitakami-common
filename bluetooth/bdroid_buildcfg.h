@@ -20,19 +20,18 @@
 
 #pragma push_macro("PROPERTY_VALUE_MAX")
 
-#if !defined(OS_GENERIC)
 #include <cutils/properties.h>
 #include <string.h>
 
 static inline const char* getBTDefaultName()
 {
     char device[PROPERTY_VALUE_MAX];
-    property_get("ro.boot.hardware", device, "");
+    property_get("ro.semc.product.model", device, "");
 
-    if (!strcmp("ivy", device)) {
-        return "Xperia Z3+";
-    } else if (!strcmp("karin", device)) {
-        return "Xperia Z4 Tablet";
+    if (!strcmp("E6683", device)) {
+        return "Xperia Z5 Dual";
+    } else if (!strcmp("E6653", device)) {
+        return "Xperia Z5";
     } else if (!strcmp("karin_windy", device)) {
         return "Xperia Z4 Tablet";
     } else if (!strcmp("sumire", device)) {
@@ -47,7 +46,6 @@ static inline const char* getBTDefaultName()
 }
 
 #define BTM_DEF_LOCAL_NAME getBTDefaultName()
-#endif // OS_GENERIC
 
 #define BTM_WBS_INCLUDED     TRUE
 
