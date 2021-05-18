@@ -158,11 +158,17 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/flashled_calc_parameters.cfg:system/etc/flashled_calc_parameters.cfg
 
+# ANT+
+PRODUCT_PACKAGES += \
+    AntHalService \
+    com.dsi.ant.antradio_library \
+    libantradio
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
     brcm-uim-sysfs \
-    libfmjni
+    libfmradio.v4l2-fm
 
 # Health
 PRODUCT_PACKAGES += \
