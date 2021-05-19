@@ -44,6 +44,7 @@
 /dev/brcm_bt_drv                                           u:object_r:serial_device:s0
 /dev/subsys_modem                                          u:object_r:subsys_modem_device:s0
 /sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc(/.*)?      u:object_r:brcm_ldisc_sysfs:s0
+/sys/devices/soc.0/bcm43xx.81/rfkill/rfkill0/type(/.*)?    u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/platform/bcm_ldisc(/.*)?                      u:object_r:sysfs_bluetooth_writable:s0
 /(vendor|system/vendor)/bin/brcm-uim-sysfs                 u:object_r:brcm_uim_exec:s0
 
