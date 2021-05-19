@@ -29,7 +29,7 @@
 # Modifications are licensed under the License.
 #
 
-import init.qcom.usb.rc
+import  /vendor/etc/init/hw/init.qcom.usb.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
@@ -256,7 +256,7 @@ on boot
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all ./vendor/etc/fstab.qcom
     # Threshold for cma page reclaim
     write /proc/sys/vm/swap_thresh_cma_free_pages 7680
 
@@ -276,7 +276,7 @@ on post-fs
 
     write /proc/sys/vm/page-cluster 0
 
-    swapon_all fstab.qcom
+    swapon_all ./vendor/etc/fstab.qcom
 
 on post-fs-data
     # Fingerprint data folder
