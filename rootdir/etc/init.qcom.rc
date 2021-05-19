@@ -673,6 +673,9 @@ service iddd /system/bin/iddd
     group oem_2987 log inet oem_2993
     disabled
 
+on property:sys.boot_completed=1
+    restart vendor.qcamerasvr
+
 on property:service.usb.otg.switch=check
     write /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling 1
     setprop service.usb.otg_switch check_done
