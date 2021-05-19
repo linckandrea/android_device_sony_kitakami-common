@@ -496,11 +496,20 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks
+
+on property:init.svc.media=restarting
+    restart vendor.qcamerasvr
+
+on property:init.svc.servicemanager=restarting
+    restart vendor.qcamerasvr
+
+on property:vold.decrypt=trigger_restart_framework
+    restart vendor.camera-provider-2-4
 
 service vendor.qseecomd /system/vendor/bin/qseecomd
     class core
