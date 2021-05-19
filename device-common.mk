@@ -184,6 +184,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # Input
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.kitakami
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/clearpad.kl:system/usr/keylayout/clearpad.kl \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
