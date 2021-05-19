@@ -129,9 +129,11 @@ PRODUCT_PACKAGES += \
     copybit.msm8994 \
     gralloc.msm8994 \
     hwcomposer.msm8994 \
-    libtinyxml \
-    memtrack.msm8994
-
+    liboverlay \
+    libqdutils \
+    libqdMetaData \
+    memtrack.msm8994 \
+    libtinyxml
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
