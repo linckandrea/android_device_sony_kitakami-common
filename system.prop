@@ -72,8 +72,8 @@ media.aac_51_output_enabled=true
 av.debug.disable.pers.cache=true
 
 # Perf
-ro.min_freq_0=384000
-ro.min_freq_4=384000
+ro.core_ctl_min_cpu=0
+ro.core_ctl_max_cpu=4
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # SEMC props
