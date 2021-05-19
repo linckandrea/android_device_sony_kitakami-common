@@ -40,7 +40,9 @@
 /rca(/.*)?                                                 u:object_r:firmware_file:s0
 
 # Bluetooth
+/dev/ttyHS0                                                u:object_r:hci_attach_dev:s0
 /dev/brcm_bt_drv                                           u:object_r:serial_device:s0
+/dev/subsys_modem                                          u:object_r:subsys_modem_device:s0
 /sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc(/.*)?      u:object_r:brcm_ldisc_sysfs:s0
 /sys/devices/platform/bcm_ldisc(/.*)?                      u:object_r:sysfs_bluetooth_writable:s0
 /(vendor|system/vendor)/bin/brcm-uim-sysfs                 u:object_r:brcm_uim_exec:s0
