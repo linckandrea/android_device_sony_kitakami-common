@@ -159,7 +159,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     FMRadio \
     brcm-uim-sysfs \
-    libfmjni
+    libfmradio.v4l2-fm
 
 # Health
 PRODUCT_PACKAGES += \
