@@ -90,6 +90,9 @@ system/bin/init.qcom.power.sh                 u:object_r:init-power-sh_exec:s0
 /sys/devices/soc\.0/qpnp-rtc-8/rtc/rtc0(/.*)?              u:object_r:sysfs_rtc:s0
 /(system/vendor|vendor)/bin/timekeep                       u:object_r:timekeep_exec:s0
 
+# Touch
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.kitakami u:object_r:hal_lineage_touch_default_exec:s0
+
 # WiFi
 /sys/devices/platform/bcmdhd_wlan/macaddr                  u:object_r:sysfs_addrsetup:s0
 /sys/devices(/soc\.0)?/bcmdhd_wlan.83/macaddr              u:object_r:sysfs_addrsetup:s0
