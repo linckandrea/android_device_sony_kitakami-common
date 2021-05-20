@@ -72,8 +72,6 @@ media.aac_51_output_enabled=true
 av.debug.disable.pers.cache=true
 
 # Perf
-ro.core_ctl_min_cpu=0
-ro.core_ctl_max_cpu=4
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # SEMC props
@@ -104,4 +102,3 @@ ro.qc.sdk.sensors.gestures=true
 
 # Wifi
 wifi.interface=wlan0
-wifi.direct.interface=p2p-dev-wlan0
