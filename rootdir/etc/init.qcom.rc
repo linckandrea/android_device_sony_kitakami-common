@@ -441,13 +441,15 @@ on post-fs-data
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
 
-    #Create PERFD deamon related dirs
+    # Create PERFD deamon related dirs
     mkdir /data/misc/perfd 0755 root system
     chmod 2755 /data/misc/perfd
     mkdir /data/system/perfd 0770 root system
-    chmod 2770 /data/system/perfd
     rm /data/system/perfd/default_values
-    start vendor.perfd
+    chmod 2770 /data/system/perfd
+    # Set perfd properties
+    setprop ro.min_freq_0 384000
+    setprop ro.min_freq_4 384000
 
     # SONY: Camera
     mkdir /data/camera 0770 media camera
@@ -542,6 +544,12 @@ service vendor.adsprpcd /system/vendor/bin/adsprpcd
    class main
    user media 
    group media drmrpc
+
+service vendor.energy-awareness /vendor/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
 
 # SONY misc
 service tad_static /system/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
@@ -682,6 +690,7 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_background_ratio 1
     # Enable ZRAM on boot_complete
     swapon_all ./vendor/etc/fstab.qcom
+    start vendor.perfd
     restart vendor.qcamerasvr
 
 on property:service.usb.otg.switch=check
