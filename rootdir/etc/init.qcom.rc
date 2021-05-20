@@ -561,6 +561,7 @@ service ta_qmi_service /system/bin/ta_qmi_service
 service sct_service /system/bin/sct_service
     class main
     user root
+    group drmrpc
     seclabel u:r:sct_service:s0
     writepid /dev/cpuset/system-background/tasks
 
