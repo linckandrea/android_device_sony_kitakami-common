@@ -555,6 +555,12 @@ service vendor.adsprpcd /system/vendor/bin/adsprpcd
    user media 
    group media drmrpc
 
+service vendor.ppd /vendor/bin/mm-pp-daemon
+    class hal
+    user system
+    socket pps stream 0660 system system
+    group system graphics
+
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
