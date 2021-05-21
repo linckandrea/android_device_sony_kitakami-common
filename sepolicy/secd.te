@@ -7,7 +7,7 @@ init_daemon_domain(secd)
 allow secd tad:unix_stream_socket connectto;
 allow secd tad_socket:sock_file write;
 allow secd tee_device:chr_file { ioctl open read write };
-allow secd secd_data_file:file { lock open write create getattr read setattr unlink };
+allow secd secd_data_file:file { ioctl lock open write create getattr read setattr unlink };
 allow secd secd_data_file:dir { rw_file_perms add_name remove_name search };
 allow secd diag_partition_device:dir search;
 allow secd diag_data_file:dir search;
@@ -18,4 +18,5 @@ allow secd iddd:unix_dgram_socket sendto;
 allow secd ion_device:chr_file rw_file_perms;
 allow secd socket_device:sock_file write;
 allow secd tee_device:chr_file { ioctl open read write };
-allow secd secd_data_file:file ioctl;
+allow secd system_data_file:dir rw_dir_perms;
+allow secd system_data_file:file r_file_perms;

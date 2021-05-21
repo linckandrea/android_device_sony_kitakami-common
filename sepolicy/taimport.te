@@ -10,3 +10,4 @@ allow taimport tad:unix_stream_socket connectto;
 allow taimport ta_data_file:dir create_dir_perms;
 allow taimport ta_data_file:file create_file_perms;
 allow taimport tad_socket:sock_file write;
+allow taimport self:capability setgid;

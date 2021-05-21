@@ -4,7 +4,9 @@ unix_socket_connect(rild, tad, tad)
 allow rild firmware_file:dir search;
 allow rild firmware_file:file r_file_perms;
 
-allow rild self:capability sys_resource;
+allow rild self:capability { sys_resource dac_override sys_module };
 
 allow rild ion_device:chr_file rw_file_perms;
 allow rild tee_device:chr_file rw_file_perms;
+
+allow rild cache_file:dir r_dir_perms;
