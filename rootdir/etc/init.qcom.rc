@@ -34,6 +34,9 @@ import  /vendor/etc/init/hw/init.qcom.usb.rc
 on early-init
     write /proc/sys/kernel/sched_boost 1
 
+    start ta_qmi_service
+    start sct_service
+
     mount debugfs /sys/kernel/debug /sys/kernel/debug mode=755
     symlink /dev/pn54x /dev/pn547
 
@@ -289,6 +292,13 @@ on post-fs
     write /proc/sys/vm/page-cluster 0
 
 on post-fs-data
+    # SONY: Start early TA-users
+    mkdir /data/etc 0755 root shell
+    start taimport
+
+    # taimport ready, use this as trigger for multi-cdf-symlinker
+    setprop init.taimport.ready true
+
     # Fingerprint data folder
     mkdir /data/fpc 0770 system system
 
