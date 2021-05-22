@@ -517,13 +517,8 @@ service vendor.qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
+    disabled
     writepid /dev/cpuset/camera-daemon/tasks
-
-on property:init.svc.media=restarting
-    restart vendor.qcamerasvr
-
-on property:init.svc.servicemanager=restarting
-    restart vendor.qcamerasvr
 
 on property:vold.decrypt=trigger_restart_framework
     restart vendor.camera-provider-2-4
@@ -700,8 +695,10 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_background_ratio 1
     # Enable ZRAM on boot_complete
     swapon_all ./vendor/etc/fstab.qcom
+    stop cameraserver
+    start vendor.qcamerasvr
+    start cameraserver
     start vendor.perfd
-    restart vendor.qcamerasvr
 
 on property:service.usb.otg.switch=check
     write /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling 1
