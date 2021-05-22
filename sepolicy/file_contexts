@@ -1,7 +1,6 @@
 # Bin
 /(system/vendor|vendor)/bin/adsprpcd                       u:object_r:adsprpcd_exec:s0
 /system/bin/clean_scratch_files                            u:object_r:clean_scratch_files_exec:s0
-/system/bin/iddd                                           u:object_r:iddd_exec:s0
 /system/bin/irsc_util                                      u:object_r:irsc_util_exec:s0
 /system/bin/mlog_qmi_service                               u:object_r:mlog_qmi_service_exec:s0
 /(system/vendor|vendor)/bin/mm-qcamera-daemon              u:object_r:qcamerasvr_exec:s0
@@ -24,22 +23,12 @@
 
 # Blocks
 /dev/block/mmcblk0p1                                       u:object_r:trim_area_partition_device:s0
-/dev/block/platform/soc\.0/7824900\.sdhci/by-name/TA       u:object_r:trim_area_partition_device:s0
+
+/dev/block/platform/soc\.0/f9824900\.sdhci/by-name/FOTAKernel       u:object_r:recovery_block_device:s0
 /dev/block/platform/soc\.0/f9824900\.sdhci/by-name/TA      u:object_r:trim_area_partition_device:s0
-/dev/block/platform/msm_sdcc\.1/by-name/TA                 u:object_r:trim_area_partition_device:s0
-/dev/block/bootdevice/by-name/TA                           u:object_r:trim_area_partition_device:s0
-/dev/block/platform/soc\.0/7824900\.sdhci/by-name/diag     u:object_r:diag_partition_device:s0
 /dev/block/platform/soc\.0/f9824900\.sdhci/by-name/diag    u:object_r:diag_partition_device:s0
-/dev/block/platform/soc\.0/f9824900\.sdhci/by-num/p39      u:object_r:diag_partition_device:s0
-/dev/block/platform/soc\.0/f9824900\.sdhci/mmcblk0p39      u:object_r:diag_partition_device:s0
-/dev/block/bootdevice/by-name/diag                         u:object_r:diag_partition_device:s0
-/dev/block/bootdevice/by-num/p39                           u:object_r:diag_partition_device:s0
-/dev/block/bootdevice/mmcblk0p39                           u:object_r:diag_partition_device:s0
-/dev/block/mmcblk0p39                                      u:object_r:diag_partition_device:s0
-/dev/block/bootdevice/mmcblk0p42                           u:object_r:diag_partition_device:s0
-/dev/block/mmcblk0p42                                      u:object_r:diag_partition_device:s0
-/idd(/.*)?                                                 u:object_r:diag_data_file:s0
-/rca(/.*)?                                                 u:object_r:firmware_file:s0
+/dev/block/platform/soc\.0/f9824900\.sdhci/by-name/oem    u:object_r:oem_block_device:s0
+/dev/block/platform/soc\.0/f9824900\.sdhci/by-name/rdimage    u:object_r:ramdump_block_device:s0
 
 # Bluetooth
 /dev/ttyHS0                                                u:object_r:hci_attach_dev:s0

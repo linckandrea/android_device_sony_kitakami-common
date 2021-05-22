@@ -131,7 +131,7 @@ BOARD_BRCM_HCI_NUM := 26
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_ROOT_EXTRA_FOLDERS := firmware persist idd rca
+BOARD_ROOT_EXTRA_FOLDERS := firmware persist
 
 # Power
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/clearpad/wakeup_gesture"
