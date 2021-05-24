@@ -328,6 +328,9 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp system /data/misc/dhcp
 
+    # Create directory used by bluetooth subsystem
+    mkdir /data/vendor/bluetooth 2770 bluetooth bluetooth
+
     # Create directory used by audio subsystem
     mkdir /data/misc/audio 0770 audio audio
 
