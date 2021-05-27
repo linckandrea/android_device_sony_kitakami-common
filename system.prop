@@ -32,6 +32,7 @@ ro.charger.enable_suspend=true
 bluetooth.enable_timeout_ms=12000
 ro.bluetooth.hfp.ver=1.6
 ro.bt.bdaddr_path=/data/vendor/bluetooth/bluetooth_bdaddr
+ro.rfkilldisabled=1
 
 # Display
 debug.composition.type=c2d
