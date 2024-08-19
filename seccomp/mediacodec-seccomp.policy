@@ -8,3 +8,4 @@ sysinfo: 1
 getcwd: 1
 inotify_init1: 1
 inotify_add_watch: 1
+_llseek: 1
