@@ -23,7 +23,8 @@ qcom.hw.aac.encoder=true
 # Camera
 ro.qc.sdk.gestures.camera=false
 ro.qc.sdk.camera.facialproc=false
-camera.disable_zsl_mode=1
+# TEMP: fixup close objects focus
+camera.disable_zsl_mode=0
 
 # Charger
 ro.charger.enable_suspend=true
