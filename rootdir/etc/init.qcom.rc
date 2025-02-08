@@ -500,6 +500,7 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service sensors /system/bin/sensors.qcom
     class main
@@ -663,12 +664,14 @@ service vendor.per_mgr /system/vendor/bin/pm-service
     class core
     user system
     group system net_raw
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system net_raw
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 on property:init.svc.per_mgr=running
     start vendor.per_proxy
