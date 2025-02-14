@@ -63,6 +63,7 @@ on init
     wait /dev/block/mmcblk0p1
     chown oem_2997 oem_2997 /dev/block/mmcblk0p1
     chmod 0770 /dev/block/mmcblk0p1
+    start tad_static
 
     # default is root radio 0440
     chmod 0644 /proc/cmdline
@@ -417,13 +418,13 @@ on post-fs-data
     chown system system /sys/devices/virtual/input/clearpad/cover_win_top
 
     # Touchscreen
-    chown system radio /sys/devices/virtual/input/clearpad/wakeup_gesture
+    chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
     chmod 0660 /sys/devices/virtual/input/clearpad/wakeup_gesture
     chown system system /sys/devices/virtual/input/clearpad/glove
     chmod 0660 /sys/devices/virtual/input/clearpad/glove
 
     # Touchscreen Tab
-    chown system radio /sys/devices/virtual/input/maxim_sti/gesture_wakeup
+    chown system system /sys/devices/virtual/input/maxim_sti/gesture_wakeup
     chmod 0660 /sys/devices/virtual/input/maxim_sti/gesture_wakeup
     chown system system /sys/devices/virtual/input/maxim_sti/glove_en
     chmod 0660 /sys/devices/virtual/input/maxim_sti/glove_en
