@@ -698,6 +698,9 @@ service secd /system/bin/secd
     socket secd_credmgr_sock stream 0660 system oem_2996
 
 on property:sys.boot_completed=1
+    # Disable schedboost
+    write /proc/sys/kernel/sched_boost 1
+
     # Threshold for cma page reclaim
     write /proc/sys/vm/swap_thresh_cma_free_pages 7680
     write /proc/sys/vm/dirty_ratio 5
