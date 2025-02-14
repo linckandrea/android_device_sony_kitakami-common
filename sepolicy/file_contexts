@@ -72,8 +72,11 @@
 # Fingerprint
 /data/fpc(/.*)?                                            u:object_r:fpc_data_file:s0
 /data/fpcd(/.*)?                                           u:object_r:fpc_data_file:s0
+# sys/devices/soc.0/f9923000.spi/spi_master/spi0/spi0.1
+/sys/devices/soc\.0/f9923000\.spi/spi_master/spi0/spi0\.1(/.*)?       u:object_r:sysfs_fingerprint:s0
 
 # TA
+/data/credmgr                                              u:object_r:secd_data_file:s0
 /data/credmgr(/.*)                                         u:object_r:secd_data_file:s0
 /dev/socket/secd_credmgr_sock                              u:object_r:secd_socket:s0
 /dev/socket/secd_devsec_sock                               u:object_r:secd_socket:s0
@@ -88,8 +91,12 @@
 /(system/vendor|vendor)/bin/timekeep                       u:object_r:timekeep_exec:s0
 
 # Touch
-sys/devices/virtual/input/clearpad/(/.*)?                  u:object_r:sysfs_touch:s0
-sys/devices/virtual/input/input2/glove                     u:object_r:sysfs_touch:s0
+/sys/devices/virtual/input/clearpad(/.*)?                   u:object_r:sysfs_securetouch:s0
+/sys/devices/virtual/input/input0(/.*)?                     u:object_r:sysfs_securetouch:s0
+/sys/devices/virtual/input/input1(/.*)?                     u:object_r:sysfs_securetouch:s0
+/sys/devices/virtual/input/input2(/.*)?                     u:object_r:sysfs_securetouch:s0
+/sys/devices/virtual/input/input3(/.*)?                     u:object_r:sysfs_securetouch:s0
+
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service\.kitakami u:object_r:hal_lineage_touch_default_exec:s0
 
 # WiFi
