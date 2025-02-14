@@ -43,6 +43,7 @@
 /(vendor|system/vendor)/bin/brcm-uim-sysfs                 u:object_r:brcm_uim_exec:s0
 
 # Camera
+/data/etc/flashled_vf_factory                              u:object_r:camera_data_file:s0
 /sys/devices(/soc\.0)?/pmi8994-flash-27(/.*)?              u:object_r:sysfs_camera_torch:s0
 /sys/devices/sony_camera_[0-9]+/info                       u:object_r:sysfs_graphics:s0
 
