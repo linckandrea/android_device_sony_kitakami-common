@@ -87,6 +87,12 @@ vendor/lib/libmm-disp-apis.so
 vendor/lib/libOpenCL.so
 vendor/lib/libscale.so
 
+# Graphics vulkan - vulkan.msm8994_ver.26.24.512
+vendor/lib/hw/vulkan.msm8994.so
+vendor/lib/libllvm-qgl.so
+vendor/lib64/hw/vulkan.msm8994.so
+vendor/lib64/libllvm-qgl.so
+
 # Graphics firmware
 etc/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw
