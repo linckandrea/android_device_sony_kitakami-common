@@ -1,5 +1,5 @@
 # ADSP
-vendor/bin/adsprpcd
+bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
@@ -114,8 +114,8 @@ vendor/lib64/libconnctrl.so
 vendor/lib/libconnctrl.so
 
 # Perf - OxygenOS 3.6.0
-vendor/bin/energy-awareness
-vendor/bin/msm_irqbalance
+bin/energy-awareness:vendor/bin/energy-awareness
+bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
 vendor/etc/perf-profile0.conf
 vendor/etc/perf-profile1.conf
@@ -127,8 +127,8 @@ vendor/lib/libqti-perfd-client.so
 vendor/lib64/libqti-perfd-client.so
 
 # Peripheral manager
-vendor/bin/pm-proxy
-vendor/bin/pm-service
+bin/pm-proxy:vendor/bin/pm-proxy
+bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
 # Secd
