@@ -104,6 +104,13 @@ int get_number_of_profiles() {
 }
 #endif
 
+#define ELECTRON_GOVERNOR "electron"
+
+int is_electron_governor(char* governor) {
+    if (strncmp(governor, ELECTRON_GOVERNOR, (strlen(ELECTRON_GOVERNOR) + 1)) == 0) return 1;
+    return 0;
+}
+
 void set_power_profile(int profile) {
     int ret = -EINVAL;
     const char* profile_name = NULL;
@@ -172,7 +179,7 @@ static int process_video_encode_hint(void* metadata) {
     }
 
     if (video_encode_metadata.state == 1) {
-        if (is_interactive_governor(governor)) {
+        if (is_interactive_governor(governor) || is_electron_governor(governor)) {
             /* sched and cpufreq params
              * hispeed freq - 768 MHz
              * target load - 90
@@ -185,7 +192,7 @@ static int process_video_encode_hint(void* metadata) {
             return HINT_HANDLED;
         }
     } else if (video_encode_metadata.state == 0) {
-        if (is_interactive_governor(governor)) {
+        if (is_interactive_governor(governor) || is_electron_governor(governor)) {
             undo_hint_action(video_encode_metadata.hint_id);
             return HINT_HANDLED;
         }
@@ -215,7 +222,7 @@ static int process_video_decode_hint(void* metadata) {
     }
 
     if (video_decode_metadata.state == 1) {
-        if (is_interactive_governor(governor)) {
+        if (is_interactive_governor(governor) || is_electron_governor(governor)) {
             int resource_values[] = {TR_MS_30, HISPEED_LOAD_90, HS_FREQ_1026,
                                      THREAD_MIGRATION_SYNC_OFF};
             perform_hint_action(video_decode_metadata.hint_id, resource_values,
@@ -223,7 +230,7 @@ static int process_video_decode_hint(void* metadata) {
             return HINT_HANDLED;
         }
     } else if (video_decode_metadata.state == 0) {
-        if (is_interactive_governor(governor)) {
+        if (is_interactive_governor(governor) || is_electron_governor(governor)) {
             undo_hint_action(video_decode_metadata.hint_id);
             return HINT_HANDLED;
         }
@@ -355,14 +362,14 @@ int set_interactive_override(int on) {
 
     if (!on) {
         /* Display off */
-        if (is_interactive_governor(governor)) {
+        if (is_interactive_governor(governor) || is_electron_governor(governor)) {
             int resource_values[] = {CPUS_ONLINE_MPD_OVERRIDE}; /* 4+0 core config in display off */
             perform_hint_action(DISPLAY_STATE_HINT_ID, resource_values,
                                 ARRAY_SIZE(resource_values));
         }
     } else {
         /* Display on */
-        if (is_interactive_governor(governor)) {
+        if (is_interactive_governor(governor) || is_electron_governor(governor)) {
             undo_hint_action(DISPLAY_STATE_HINT_ID);
         }
     }
