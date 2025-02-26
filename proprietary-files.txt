@@ -1,5 +1,5 @@
 # ADSP
-bin/adsprpcd:vendor/bin/adsprpcd
+vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
@@ -94,8 +94,8 @@ vendor/lib64/hw/vulkan.msm8994.so
 vendor/lib64/libllvm-qgl.so
 
 # Graphics firmware
-etc/firmware/a420_pfp.fw
-etc/firmware/a420_pm4.fw
+vendor/firmware/a420_pfp.fw
+vendor/firmware/a420_pm4.fw
 
 # Keystore
 vendor/lib64/hw/keystore.msm8994.so
@@ -149,49 +149,49 @@ lib64/libsuntory_utils.so
 lib64/libtee.so
 
 # Security firmware
-etc/firmware/tzdtcpkctl.b00
-etc/firmware/tzdtcpkctl.b01
-etc/firmware/tzdtcpkctl.b02
-etc/firmware/tzdtcpkctl.b03
-etc/firmware/tzdtcpkctl.mdt
-etc/firmware/tzhdcp.b00
-etc/firmware/tzhdcp.b01
-etc/firmware/tzhdcp.b02
-etc/firmware/tzhdcp.b03
-etc/firmware/tzhdcp.mdt
-etc/firmware/tzlibasb.b00
-etc/firmware/tzlibasb.b01
-etc/firmware/tzlibasb.b02
-etc/firmware/tzlibasb.b03
-etc/firmware/tzlibasb.mdt
-etc/firmware/tznautilus.b00
-etc/firmware/tznautilus.b01
-etc/firmware/tznautilus.b02
-etc/firmware/tznautilus.b03
-etc/firmware/tznautilus.mdt
-etc/firmware/tzsuntory.b00
-etc/firmware/tzsuntory.b01
-etc/firmware/tzsuntory.b02
-etc/firmware/tzsuntory.b03
-etc/firmware/tzsuntory.mdt
-etc/firmware/tztpm.b00
-etc/firmware/tztpm.b01
-etc/firmware/tztpm.b02
-etc/firmware/tztpm.b03
-etc/firmware/tztpm.mdt
-etc/firmware/tzwidevine.b00
-etc/firmware/tzwidevine.b01
-etc/firmware/tzwidevine.b02
-etc/firmware/tzwidevine.b03
-etc/firmware/tzwidevine.mdt
+vendor/firmware/tzdtcpkctl.b00
+vendor/firmware/tzdtcpkctl.b01
+vendor/firmware/tzdtcpkctl.b02
+vendor/firmware/tzdtcpkctl.b03
+vendor/firmware/tzdtcpkctl.mdt
+vendor/firmware/tzhdcp.b00
+vendor/firmware/tzhdcp.b01
+vendor/firmware/tzhdcp.b02
+vendor/firmware/tzhdcp.b03
+vendor/firmware/tzhdcp.mdt
+vendor/firmware/tzlibasb.b00
+vendor/firmware/tzlibasb.b01
+vendor/firmware/tzlibasb.b02
+vendor/firmware/tzlibasb.b03
+vendor/firmware/tzlibasb.mdt
+vendor/firmware/tznautilus.b00
+vendor/firmware/tznautilus.b01
+vendor/firmware/tznautilus.b02
+vendor/firmware/tznautilus.b03
+vendor/firmware/tznautilus.mdt
+vendor/firmware/tzsuntory.b00
+vendor/firmware/tzsuntory.b01
+vendor/firmware/tzsuntory.b02
+vendor/firmware/tzsuntory.b03
+vendor/firmware/tzsuntory.mdt
+vendor/firmware/tztpm.b00
+vendor/firmware/tztpm.b01
+vendor/firmware/tztpm.b02
+vendor/firmware/tztpm.b03
+vendor/firmware/tztpm.mdt
+vendor/firmware/tzwidevine.b00
+vendor/firmware/tzwidevine.b01
+vendor/firmware/tzwidevine.b02
+vendor/firmware/tzwidevine.b03
+vendor/firmware/tzwidevine.mdt
 
 # Signed Venus (media) firmware
-etc/firmware/venus.b00:vendor/firmware/venus.b00
-etc/firmware/venus.b01:vendor/firmware/venus.b01
-etc/firmware/venus.b02:vendor/firmware/venus.b02
-etc/firmware/venus.b03:vendor/firmware/venus.b03
-etc/firmware/venus.b04:vendor/firmware/venus.b04
-etc/firmware/venus.mdt:vendor/firmware/venus.mdt
+vendor/firmware/venus.b00
+vendor/firmware/venus.b01
+vendor/firmware/venus.b02
+vendor/firmware/venus.b03
+vendor/firmware/venus.b04
+vendor/firmware/venus.mdt
 
 # Smart camera
 vendor/lib/libmmcamera_chromaflash_lib.so
