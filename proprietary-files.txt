@@ -87,7 +87,7 @@ vendor/lib/libmm-disp-apis.so
 vendor/lib/libOpenCL.so
 vendor/lib/libscale.so
 
-# Graphics vulkan - vulkan.msm8994_ver.26.24.512
+# Graphics vulkan - OPM7.181205.001
 vendor/lib/hw/vulkan.msm8994.so
 vendor/lib/libllvm-qgl.so
 vendor/lib64/hw/vulkan.msm8994.so
