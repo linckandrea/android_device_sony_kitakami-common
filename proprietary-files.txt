@@ -113,10 +113,16 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib64/libconnctrl.so
 vendor/lib/libconnctrl.so
 
-# Perf - OPM7.181205.001
+# Perf - OxygenOS 3.6.0
+bin/energy-awareness:vendor/bin/energy-awareness
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
 vendor/etc/perf-profile0.conf
+vendor/etc/perf-profile1.conf
+vendor/etc/perf-profile2.conf
+vendor/etc/perf-profile3.conf
+vendor/etc/perf-profile4.conf
+vendor/etc/perf-profile5.conf
 vendor/lib/libqti-perfd-client.so
 vendor/lib64/libqti-perfd-client.so
 
