@@ -336,7 +336,4 @@
          is interactive. -->
     <bool name="config_volumeHushGestureEnabled">false</bool>
 
-    <!-- If this is true, device supports Sustained Performance Mode. -->
-    <bool name="config_sustainedPerformanceModeSupported">true</bool>
-
 </resources>
